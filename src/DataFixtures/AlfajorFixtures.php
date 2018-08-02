@@ -44,12 +44,7 @@ class AlfajorFixtures extends Fixture
         ];
 
         foreach ($values as $value) {
-            $alfajor = new Alfajor();
-
-            $alfajor->setGusto($value['gusto']);
-            $alfajor->setLetra($value['letra']);
-            $alfajor->setValor($value['valor']);
-
+            $alfajor = new Alfajor($value['gusto'], $value['letra'], $value['valor']);
             $manager->persist($alfajor);
             $manager->flush();
         }
