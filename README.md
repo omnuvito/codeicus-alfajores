@@ -1,5 +1,9 @@
 # Codeicus - Ejercicio Alfajores
 
+### Requerimientos
+
+- PHP 7.1
+
 ### Configuración del proyecto
 
 1. Clonar el proyecto.
