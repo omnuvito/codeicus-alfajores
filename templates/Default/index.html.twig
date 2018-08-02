@@ -1,0 +1,94 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">Codeicus Alfajores</h1>
+                <p class="lead">Ejercicio cálculo de precios de caja de alfajores.</p>
+            </div>
+        </div>
+        <div class="accordion" id="alfajores">
+            {#Acordeon Sabores#}
+            <div class="card">
+                <div class="card-header" id="headingSabores">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseSabores" aria-expanded="true" aria-controls="collapseOne">
+                            Lista de Sabores
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseSabores" class="collapse" aria-labelledby="headingSabores" data-parent="#alfajores">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col"></div>
+                            <div class="col-12">
+                                <h1>Sabores</h1>
+                                <div id="alfajor"></div>
+                            </div>
+                            <div class="col"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header" id="headingForm">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseForm" aria-expanded="false" aria-controls="collapseTwo">
+                                Crear Nuevo Sabor
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseForm" class="collapse" aria-labelledby="headingForm" data-parent="#alfajores">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col"></div>
+                                <div class="col-12">
+                                    <div id="alfajorForm"></div>
+                                </div>
+                                <div class="col"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {#Calcular precio#}
+                <div class="card">
+                    <div class="card-header" id="headingBox">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseBox" aria-expanded="false" aria-controls="collapseTwo">
+                                Calcular Precio Caja
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseBox" class="collapse" aria-labelledby="headingBox" data-parent="#alfajores">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col"></div>
+                                <div class="col-12">
+                                    <div id="boxForm"></div>
+                                </div>
+                                <div class="col"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            Ejercicio hecho por Jose Alejandro Alvarez. 2018.
+        </footer>
+    </div>
+    {% block javascripts %}
+        <script type="text/javascript" src="{{ asset('build/js/alfajor.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('build/js/boxForm.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('build/js/alfajoresForm.js') }}"></script>
+    {% endblock %}
+{% endblock %}
